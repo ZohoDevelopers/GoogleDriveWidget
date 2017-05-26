@@ -34,9 +34,9 @@ Utils.RenderTemplate=function(templateId , data,callBack){
 };
 var Handler={
 		ApiSpec:{
-			getFiles : "ex10.testconnector.getfiles",
-			uploadFile: "ex10.testconnector.uplaodfile",
-			getFileInfo: "ex10.testconnector.getfileinfo"
+			getFiles : "googledriverl.googledriveconnector.getfiles",
+			uploadFile: "googledriverl.googledriveconnector.uploadfile",
+			getFileInfo: "googledriverl.googledriveconnector.getfileinfo"
 		},
 		MetaSpec:{
 			folderID : "Street"
@@ -125,7 +125,7 @@ Handler.createFolder = function(response){
 	})
 };
 Handler.getFiles = function(folderID){
-	return ZOHO.CRM.CONNECTOR.invokeAPI(Handler.ApiSpec.getFiles,{folderID:folderID})
+	return ZOHO.CRM.CONNECTOR.invokeAPI(Handler.ApiSpec.getFiles,{folderId:folderID})
 	.then(function(gDriveResp){
 		var resp = JSON.parse(gDriveResp.response)
 		var files = resp.items;

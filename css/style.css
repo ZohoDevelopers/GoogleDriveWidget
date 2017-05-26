@@ -1,0 +1,322 @@
+*
+{
+    padding:0;
+    margin:0;
+}
+body {
+    font-family: 'proxima_nova_rgregular', Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size:14px;
+}
+/*.fil-list
+{
+    margin:15px;
+}*/
+.fil-list th, .fil-list td
+{
+padding:15px 10px;  
+}
+.fil-list th
+{
+    text-align:left;
+    color:#333;
+    font-weight:normal;
+}
+.fil-list td
+{
+    background:#fff;
+    border-bottom:solid 1px #dfdfdf;
+    color:#7d7d7d;
+}
+.donwload-f
+{
+    background: url(../img/icon.png);
+background-position: -84px -26px;
+width: 16px;
+height: 15px;
+}
+.icon-file
+{
+    background: url(../img/icon.png);
+    background-position: -17px -21px;
+}
+.gDriveIcon
+{
+    width: 16px;
+    height: 15px;
+}
+.gDriveThumbNail
+{
+	display:none;
+}
+.gDriveThumbNailHover
+{
+	text-decoration: none;
+}
+.icon-folder
+{
+        background: url(../img/icon.png);
+    background-position: -17px -71px;
+    width: 16px;
+    height: 16px;
+
+}
+.up-bton
+{
+    background:#4285f4;
+    border-radius:1px;
+    padding:10px 15px;
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    margin-top:10px;
+    clear:both;
+}
+
+.loadingText {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	color: #fff;
+	width: 80px;
+	margin-left: -40px;
+	height: 20px;
+	margin-top: -10px;
+}
+
+.loadingBG {
+	background: #000;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+	position: fixed;
+}
+.gDriveThumbNailHover span {
+    color: #7d7d7d;
+}
+
+.gDriveThumbNailHover img {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index : 10;
+}
+.gDriveThumbNailHover:hover img {
+    display: block;
+}
+.file-up
+{
+	width:360px;
+	margin:0 auto;
+	position:absolute;
+	margin-left:-200px;
+	left:50%;
+	padding: 22px 15px;
+	border:solid 1px #dbdbdb;
+	background:#fff;
+	margin-top:50px;
+	padding-bottom:40px;
+	box-shadow: 0px 2px 4px #ddd;
+}
+.file-box
+{
+	background:#fafafa;
+	padding:23px;
+	border: 1px dashed #ccc;
+	margin:15px 40px 0;
+	text-align:center;
+}
+
+.drop-btn
+{
+	background:#;
+	border-radius:2px;
+	padding:8px 15px;
+	border:none;
+	color:#19bc7d;
+	font-size:16px;
+	text-decoration:none;
+	margin-top:30px;
+	border:solid 1px #19bc7d;
+}
+.up-gd
+{
+	background:#4285f4;
+	border-radius:2px;
+	padding:8px 15px;
+	border:none;
+	color:#fff;
+	font-size:16px;
+	text-decoration:none;
+	margin-top:30px;
+}
+.fil-upl
+{
+	width: 277px;
+    height: 152px;
+    position: absolute;
+    z-index: 22;
+    opacity:0;
+    margin-left: 40px;
+    margin-top: 15px;
+	cursor: pointer;
+	
+}
+/* PROXIMA NOVA FONT WEIGHT LIST */
+/*~~~~~~~~~~ REGULAR ~~~~~~~~~~*/
+@font-face {
+    font-family:"proxima_nova_rgregular";
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot");
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_regular_macroman/ProximaNova-Reg-webfont.eot?#iefix") format("embedded-opentype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_regular_macroman/ProximaNova-Reg-webfont.woff") format("woff"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_regular_macroman/ProximaNova-Reg-webfont.ttf") format("truetype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_regular_macroman/ProximaNova-Reg-webfont.svg#proxima_nova_rgregular") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+/*~~~~~~~~~~ EXTRABOLD ~~~~~~~~~~*/
+@font-face {
+    font-family:"proxima_novaextrabold";
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_extrabold_macroman/ProximaNova-Xbold-webfont.eot");
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_extrabold_macroman/ProximaNova-Xbold-webfont.eot?#iefix") format("embedded-opentype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_extrabold_macroman/ProximaNova-Xbold-webfont.woff") format("woff"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_extrabold_macroman/ProximaNova-Xbold-webfont.ttf") format("truetype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_extrabold_macroman/ProximaNova-Xbold-webfont.svg#proxima_novaextrabold") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+/*~~~~~~~~~~ SEMIBOLD ~~~~~~~~~~*/
+@font-face {
+    font-family:"proxima_novasemibold";
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot");
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.eot?#iefix") format("embedded-opentype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.woff") format("woff"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.ttf") format("truetype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_semibold_macroman/ProximaNova-Sbold-webfont.svg#proxima_novasemibold") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+/*~~~~~~~~~~ THIN ~~~~~~~~~~*/
+@font-face {
+    font-family:"proxima_nova_thin";
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_thin_macroman/ProximaNova-Thin-webfont.eot");
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_thin_macroman/ProximaNova-Thin-webfont.eot?#iefix") format("embedded-opentype"),
+    url("https://fonts.zohostatic.com/proximanova/proximanova_thin_macroman/ProximaNova-Thin-webfont.woff") format("woff"),
+    url("https://fonts.zohostatic.com/proximanova/proximanova_thin_macroman/ProximaNova-Thin-webfont.ttf") format("truetype"),
+    url("https://fonts.zohostatic.com/proximanova/proximanova_thin_macroman/ProximaNova-Thin-webfont.svg#proxima_nova_thin") format("svg");
+    font-weight:normal;
+    font-style:normal
+}
+/*~~~~~~~~~~ LIGHT ~~~~~~~~~~*/
+@font-face { 
+    font-family:"proxima_novalight";
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_light_macroman/ProximaNova-Light-webfont.eot");
+    src:url("https://fonts.zohostatic.com/proximanova/proximanova_light_macroman/ProximaNova-Light-webfont.eot?#iefix") format("embedded-opentype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_light_macroman/ProximaNova-Light-webfont.woff") format("woff"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_light_macroman/ProximaNova-Light-webfont.ttf") format("truetype"),
+        url("https://fonts.zohostatic.com/proximanova/proximanova_light_macroman/ProximaNova-Light-webfont.svg#proxima_novalight") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+/*~~~~~~~~~~ BOLD ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_bold_macroman/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bold_macroman/ProximaNova-Bold-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bold_macroman/ProximaNova-Bold-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bold_macroman/ProximaNova-Bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ BLACK (LAST BOLD) ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_novablack';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_black_macroman/ProximaNova-Black-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_black_macroman/ProximaNova-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_black_macroman/ProximaNova-Black-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_black_macroman/ProximaNova-Black-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_black_macroman/ProximaNova-Black-webfont.svg#proxima_novablack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* PROXIMA NOVA ITALIC STYLES LIST */
+/*~~~~~~~~~~ LIGHT ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_novalight_italic';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_lightitalic_macroman/ProximaNova-LightIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_lightitalic_macroman/ProximaNova-LightIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_lightitalic_macroman/ProximaNova-LightIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_lightitalic_macroman/ProximaNova-LightIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_lightitalic_macroman/ProximaNova-LightIt-webfont.svg#proxima_novalight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ REGULAR ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_novaregular_italic';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_italic_macroman/ProximaNova-RegIt-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ SEMIBOLD ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_novasemibold_italic';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_semibolditalic_macroman/ProximaNova-SboldIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_semibolditalic_macroman/ProximaNova-SboldIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_semibolditalic_macroman/ProximaNova-SboldIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_semibolditalic_macroman/ProximaNova-SboldIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_semibolditalic_macroman/ProximaNova-SboldIt-webfont.svg#proxima_novasemibold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ REGULARBOLD ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'proxima_nova_rgbold_italic';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_bolditalic_macroman/ProximaNova-BoldIt-webfont.svg#proxima_nova_rgbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ THIN ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'ProximaNovaThThinIt';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_thinitalic_macroman/ProximaNova-ThinIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_thinitalic_macroman/ProximaNova-ThinIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_thinitalic_macroman/ProximaNova-ThinIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_thinitalic_macroman/ProximaNova-ThinIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_thinitalic_macroman/ProximaNova-ThinIt-webfont.svg#ProximaNovaThThinIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ EXTRABOLD ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'ProximaNovaThExtraboldIt';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_extrabolditalic_macroman/ProximaNova-XboldIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_extrabolditalic_macroman/ProximaNova-XboldIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_extrabolditalic_macroman/ProximaNova-XboldIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_extrabolditalic_macroman/ProximaNova-XboldIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_extrabolditalic_macroman/ProximaNova-XboldIt-webfont.svg#ProximaNovaThExtraboldIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*~~~~~~~~~~ BLACK ITALIC ~~~~~~~~~~*/
+@font-face {
+    font-family: 'ProximaNovaBlBlackIt';
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_blackitalic_macroman/ProximaNova-BlackIt-webfont.eot');
+    src: url('https://fonts.zohostatic.com/proximanova/proximanova_blackitalic_macroman/ProximaNova-BlackIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_blackitalic_macroman/ProximaNova-BlackIt-webfont.woff') format('woff'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_blackitalic_macroman/ProximaNova-BlackIt-webfont.ttf') format('truetype'),
+         url('https://fonts.zohostatic.com/proximanova/proximanova_blackitalic_macroman/ProximaNova-BlackIt-webfont.svg#ProximaNovaBlBlackIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Google Drive</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../lib/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../lib/handlebars.js"></script>
+<script type="text/javascript" src="../lib/ZohoEmbededAppSDK.min.js"></script>
+<script type="text/javascript" src="../js/handler.js"></script>
+<script type="text/javascript">
+var mousePos={
+		x:undefined,
+		y:undefined,
+		getX:function(){
+		    return this.x;
+		},
+		getY:function(){
+			return this.y;
+		}
+};
+document.addEventListener('mousemove', onMouseUpdate, false);
+document.addEventListener('mouseenter', onMouseUpdate, false);
+function onMouseUpdate(e) {
+	mousePos.x = e.pageX;
+	mousePos.y = e.pageY;
+}
+
+
+	$(document).ready(function() {
+		
+		/*
+		 * initialize widget with config data
+		 */
+		ZOHO.embeddedApp.on("DialerActive", function() {
+			console.log("dialer Active");
+		})
+		ZOHO.embeddedApp.on("Dial", Handler.initiateCall)
+		ZOHO.embeddedApp.on("PageLoad", Handler.entityPageLoad)
+
+		$("#widgetsDiv").on("click", ".toggle-icons", function() {
+			var ele = $(this);
+			if (ele.hasClass("blueTxt")) {
+				ele.removeClass("blueTxt")
+			} else {
+				ele.addClass("blueTxt")
+			}
+		});
+		ZOHO.embeddedApp.init().then(function() {
+			Handler.widgetInit();
+		});
+	});
+</script>
+</head>
+<body style="background: #f2f2f2;padding-bottom:100px;">
+	<div id="loadingDiv" style="display: none">
+		<div class="loadingBG">&nbsp;</div>
+		<div class="loadingText">Loading...</div>
+	</div>
+	<div class="successMsg" style="display: none"></div>
+	<div id="contentDiv"></div>
+	<script id='fileListing' type='text/x-handlebars-template'>
+	<div style="padding: 15px;">
+		{{#unless files}}
+		<div class="file-box">
+ 			No Files Available
+		</div>
+		{{/unless}}
+		{{#if files}}
+ 			<table cellpadding="0" cellspacing="0" width="100%" class="fil-list">
+				<tr>
+					<th colspan="3">Name</th>
+					<th>Size</th>
+					<th>Last Modified at</th>
+					<th>Last Modified by</th>
+				</tr>
+				{{#each files}}
+					<tr>
+						<td width="3%">
+							<div class="gDriveIcon">
+								<img src="{{this.iconLink}}"></img>
+							</div>
+						</td>
+						<td width="20%">
+							<a href="javascript:;" class="gDriveThumbNailHover" onmouseover="Utils.moveToolTip(this)" onmousemove="Utils.moveToolTip(this)">	
+								<span> {{this.title}} </span>
+								<img src="{{this.thumbnailLink}}"></img>
+							<a>
+						</td>
+						<td width="5%">
+							<a target="_blank" href="{{this.webContentLink}}"><div class="donwload-f"></div></a>
+						</td>
+						<td width="10%">{{this.fileSize}} bytes</td>
+						<td width="15%">{{this.modifiedDate}}</td>
+						<td width="25%">{{this.lastModifyingUser.displayName}}</td>
+					</tr>
+  				{{/each}}
+			</table>
+		{{/if}}	
+		<div style="margin-top: 25px;">
+			<input id="gdrive-file" type="file" class="fil-upl" onchange="Handler.uploadFile();" style="width: 100%;">
+			<div class="file-box">
+				<div style="clear:both;margin-bottom:30px;">
+					<p>Drop files to upload</p>
+				</div>
+				<a type="button" class="drop-btn" href="javascript:;" style="margin-top:20px;">or click here</a>
+			</div>
+		</div>
+	</div>
+</script>
+<script id='test' type='text/x-handlebars-template'>
+{{#if classes}}
+ calss iruku da
+{{/if}}
+<ul class="people_list">
+  {{#each people}}
+    <li>{{this.Name}}</li>
+  {{/each}}
+</ul>
+</script>
+</body>
+</html>

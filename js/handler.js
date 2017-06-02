@@ -99,7 +99,7 @@ Handler.createFolder = function(response){
 	return ZOHO.CRM.CONNECTOR.invokeAPI(Handler.ApiSpec.uploadFile,data)			
 	.then(function(response){
 		
-		var temp = JSON.parse(response);
+		var temp = response;
 		var googleDriveResp = JSON.parse(temp.response);
 		var folderID = googleDriveResp.id;
 		Handler.Session.folderID = folderID;
